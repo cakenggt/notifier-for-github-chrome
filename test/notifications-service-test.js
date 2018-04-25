@@ -33,6 +33,7 @@ test.beforeEach(t => {
 	window.localStorage.getItem.withArgs('oauthToken').returns('token');
 	window.localStorage.getItem.withArgs('showDesktopNotif').returns(true);
 	window.localStorage.getItem.withArgs('playNotifSound').returns(true);
+	window.localStorage.getItem.withArgs('requireDismiss').returns(true);
 });
 
 test.serial('#openNotification gets notification url by notificationId from PersistenceService', async t => {
