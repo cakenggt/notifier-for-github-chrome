@@ -45,7 +45,7 @@ const NotificationsService = {
 			type: 'basic',
 			message: notificationInfo.repository.full_name,
 			contextMessage: Defaults.getNotificationReasonText(notificationInfo.reason),
-			requireInteraction: true
+			requireInteraction: PersistenceService.get('playNotifSound') === true
 		};
 	},
 

@@ -80,6 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
+	const RequireDismissOption = new Option({
+		id: 'require_dismiss',
+		storageKey: 'requireDismiss',
+		valueType: 'checked',
+		onChange(option) {
+			option.writeValue();
+			updateBadge();
+		}
+	});
+
 	function normalizeRoot(url) {
 		if (!/^https?:\/\//.test(url)) {
 			// Assume it is https
@@ -103,5 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		UseParticipatingCountOption.readValue();
 		ShowDesktopNotificationsOption.readValue();
 		PlayNotificationSoundOption.readValue();
+		RequireDismissOption.readValue();
 	}
 });
